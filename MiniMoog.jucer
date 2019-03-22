@@ -3,14 +3,17 @@
 <JUCERPROJECT id="LuLPgs" name="MiniMoog" projectType="guiapp" jucerVersion="5.4.3">
   <MAINGROUP id="Ssg8HQ" name="MiniMoog">
     <GROUP id="{1F2605EF-C0F2-00C0-6D37-E62C5FD44162}" name="Source">
-      <FILE id="ADQywc" name="ControllersPanel.h" compile="0" resource="0"
-            file="Source/ControllersPanel.h"/>
+      <FILE id="xGnO59" name="MixerPanel.h" compile="0" resource="0" file="Source/MixerPanel.h"/>
       <FILE id="aOUNzN" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="iI7vvR" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
       <FILE id="nSugc0" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="MYjx85" name="Panel.cpp" compile="1" resource="0" file="Source/Panel.cpp"/>
       <FILE id="tpr58E" name="Panel.h" compile="0" resource="0" file="Source/Panel.h"/>
+      <FILE id="ADQywc" name="ControllersPanel.h" compile="0" resource="0"
+            file="Source/ControllersPanel.h" xcodeResource="0"/>
+      <FILE id="DQa3U7" name="OscillatorBankPanel.h" compile="0" resource="0"
+            file="Source/OscillatorBankPanel.h" xcodeResource="0"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>

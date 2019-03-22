@@ -11,6 +11,8 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "Panel.h"
 #include "ControllersPanel.h"
+#include "OscillatorBankPanel.h"
+#include "MixerPanel.h"
 
 //==============================================================================
 /*
@@ -37,6 +39,8 @@ private:
     Slider volumeKnob;
     Panel test;
     ControllersPanel controller;
+    OscillatorBankPanel oscillatorBank;
+    MixerPanel mixer;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

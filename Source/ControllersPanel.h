@@ -30,9 +30,9 @@ public:
         modulationMix.setTextBoxStyle(Slider::TextEntryBoxPosition::NoTextBox, false, 0, 0);
         
         knobFont.setTypefaceName("Futura");
-        knobFont.setHeight(16.0f);
+        knobFont.setHeight(12.0f);
         panelFont.setTypefaceName("Futura");
-        panelFont.setHeight(16.0f);
+        panelFont.setHeight(28.0f);
         
         addAndMakeVisible(tune);
         addAndMakeVisible(glide);
@@ -53,20 +53,22 @@ public:
 
     void paint (Graphics& g) override
     {
-        area = Rectangle<int>(0, 0, 200, 350);
+        area = Rectangle<int>(0, 0, width, height);
         g.setColour(Colours::black);
         g.fillRect(area);
         
         g.setFont(panelFont);
         g.setColour(Colours::white);
         g.drawText("CONTROLLERS", area, Justification::centredBottom, true);
+        g.setFont(knobFont);
+        g.drawText("TUNE", width/2 - 20, tune.getY()+50, 40, 10, Justification::centred);
+        g.drawText("GLIDE", width/3 - 38, glide.getY()+90, 40, 10, Justification::centred);
+        g.drawText("MODULATION MIX", width/3*2 - 30, modulationMix.getY()+90, 100, 10, Justification::centred);
         
-        g.drawText("TUNE", (, tune.getY()+50, 40, 10, Justification::horizontallyCentred);
-        
-        g.drawLine(0, 0, width, 0);
-        g.drawLine(width, 0, width, height);
-        g.drawLine(width, height, 0, height);
-        g.drawLine(0, height, 0, 0);
+        g.drawLine(0, 0, width, 0, lineThickness);
+        g.drawLine(width, 0, width, height, lineThickness);
+        g.drawLine(width, height, 0, height, lineThickness);
+        g.drawLine(0, height, 0, 0, lineThickness);
         
     }
 
@@ -89,6 +91,9 @@ public:
 
 private:
     Rectangle<int> area;
+    
+    float lineThickness = 3.0;
+    
     int height = 350;
     int width = 200;
     int knobBorder = 5;

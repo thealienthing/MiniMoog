@@ -30,8 +30,8 @@ public:
 
 private:
     //Rectangle<int> controllers;
-    Rectangle<int> oscillatorBank;
-    Rectangle<int> mixer;
+    //Rectangle<int> oscillatorBank;
+    //Rectangle<int> mixer;
     Rectangle<int> modifiers;
     Rectangle<int> output;
     Rectangle<int> power;
