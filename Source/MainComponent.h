@@ -9,10 +9,13 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "Panel.h"
-#include "ControllersPanel.h"
-#include "OscillatorBankPanel.h"
-#include "MixerPanel.h"
+#include "panels/ControllersPanel.h"
+#include "panels/OscillatorBankPanel.h"
+#include "panels/MixerPanel.h"
+#include "panels/ModifiersPanel.h"
+#include "panels/OutputPanel.h"
+#include "panels/PowerPanel.h"
+#include "buttons/FlipSwitch.h"
 
 //==============================================================================
 /*
@@ -37,10 +40,13 @@ private:
     // Your private member variables go here...
     int sliderRad = 55;
     Slider volumeKnob;
-    Panel test;
     ControllersPanel controller;
     OscillatorBankPanel oscillatorBank;
     MixerPanel mixer;
-
+    ModifiersPanel modifiers;
+    OutputPanel     output;
+    PowerPanel      power;
+    FlipSwitch  flip1;
+    ImageButton myImageButton;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

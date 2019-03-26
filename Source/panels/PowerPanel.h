@@ -1,9 +1,9 @@
 /*
   ==============================================================================
 
-    OscillatorBankPanel.h
-    Created: 21 Mar 2019 1:31:09pm
-    Author:  Ben Stoneking
+    PowerPanel.h
+    Created: 21 Mar 2019 6:47:59pm
+    Author:  Benjamin Stoneking
 
   ==============================================================================
 */
@@ -15,10 +15,10 @@
 //==============================================================================
 /*
 */
-class OscillatorBankPanel    : public Component
+class PowerPanel    : public Component
 {
 public:
-    OscillatorBankPanel()
+    PowerPanel()
     {
         setSize(width, height);
         
@@ -26,22 +26,21 @@ public:
         knobFont.setHeight(12.0f);
         panelFont.setTypefaceName("Futura");
         panelFont.setHeight(28.0f);
-        
+
     }
 
-    ~OscillatorBankPanel()
+    ~PowerPanel()
     {
     }
 
     void paint (Graphics& g) override
     {
-        
         area = Rectangle<int>(0, 0, width, height);
         g.setColour(Colours::black);
         g.fillRect(area);
         g.setColour(Colours::white);
         g.setFont(panelFont);
-        g.drawText("OSCILLATOR BANK", area, Justification::centredBottom, true);
+        //g.drawText("OSCILLATOR BANK", area, Justification::centredBottom, true);
         
         g.drawLine(0, 0, width, 0, lineThickness);
         g.drawLine(width, 0, width, height, lineThickness);
@@ -62,13 +61,11 @@ private:
     float lineThickness = 3.0f;
     
     int height = 350;
-    int width = 325;
+    int width = 75;
     int knobBorder = 5;
     int leftKnobOffset = 10;
     
     Font panelFont;
     Font knobFont;
-    
-    
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (OscillatorBankPanel)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PowerPanel)
 };

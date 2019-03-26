@@ -3,17 +3,28 @@
 <JUCERPROJECT id="LuLPgs" name="MiniMoog" projectType="guiapp" jucerVersion="5.4.3">
   <MAINGROUP id="Ssg8HQ" name="MiniMoog">
     <GROUP id="{1F2605EF-C0F2-00C0-6D37-E62C5FD44162}" name="Source">
-      <FILE id="xGnO59" name="MixerPanel.h" compile="0" resource="0" file="Source/MixerPanel.h"/>
+      <GROUP id="{FE606E0D-1FA0-133D-71AF-3959AB729113}" name="panels">
+        <FILE id="l2ddzt" name="ControllersPanel.h" compile="0" resource="0"
+              file="Source/panels/ControllersPanel.h"/>
+        <FILE id="MyksFf" name="MixerPanel.h" compile="0" resource="0" file="Source/panels/MixerPanel.h"/>
+        <FILE id="zObgY5" name="ModifiersPanel.h" compile="0" resource="0"
+              file="Source/panels/ModifiersPanel.h"/>
+        <FILE id="PkyP33" name="OscillatorBankPanel.h" compile="0" resource="0"
+              file="Source/panels/OscillatorBankPanel.h"/>
+        <FILE id="xtteX6" name="OutputPanel.h" compile="0" resource="0" file="Source/panels/OutputPanel.h"/>
+        <FILE id="mfEP1D" name="PowerPanel.h" compile="0" resource="0" file="Source/panels/PowerPanel.h"/>
+      </GROUP>
       <FILE id="aOUNzN" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="iI7vvR" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
       <FILE id="nSugc0" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
-      <FILE id="MYjx85" name="Panel.cpp" compile="1" resource="0" file="Source/Panel.cpp"/>
-      <FILE id="tpr58E" name="Panel.h" compile="0" resource="0" file="Source/Panel.h"/>
-      <FILE id="ADQywc" name="ControllersPanel.h" compile="0" resource="0"
-            file="Source/ControllersPanel.h" xcodeResource="0"/>
-      <FILE id="DQa3U7" name="OscillatorBankPanel.h" compile="0" resource="0"
-            file="Source/OscillatorBankPanel.h" xcodeResource="0"/>
+      <GROUP id="{84A4ECFC-11BE-513C-828F-20E62CE71B62}" name="images">
+        <FILE id="wcAO2R" name="on.png" compile="0" resource="1" file="Source/images/on.png"/>
+        <FILE id="F0pmgl" name="off.png" compile="0" resource="1" file="Source/images/off.png"/>
+      </GROUP>
+      <GROUP id="{377E0883-25E7-9950-7786-8AB4D2539F42}" name="buttons">
+        <FILE id="WFmCNc" name="FlipSwitch.h" compile="0" resource="0" file="Source/buttons/FlipSwitch.h"/>
+      </GROUP>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
