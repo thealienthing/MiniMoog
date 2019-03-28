@@ -11,7 +11,7 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "../buttons/FlipSwitch.h"
+#include "../buttons/BlueFlipSwitch.h"
 
 //==============================================================================
 /*
@@ -22,7 +22,16 @@ public:
     OutputPanel()
     {
         setSize(width, height);
-        addAndMakeVisible(flip1);
+        addAndMakeVisible(testToneToggle);
+        addAndMakeVisible(mainOutputToggle);
+        addAndMakeVisible(volumeMain);
+        addAndMakeVisible(volumePhone);
+        
+        volumeMain.setSliderStyle(juce::Slider::Rotary);
+        volumePhone.setSliderStyle(juce::Slider::Rotary);
+        
+        volumeMain.setTextBoxStyle(Slider::TextEntryBoxPosition::NoTextBox, false, 0, 0);
+        volumePhone.setTextBoxStyle(Slider::TextEntryBoxPosition::NoTextBox, false, 0, 0);
         
         knobFont.setTypefaceName("Futura");
         knobFont.setHeight(12.0f);
@@ -53,7 +62,15 @@ public:
     void resized() override
     {
         area = Rectangle<int>(0, 0, width, height);
-        flip1.setBounds(area);
+        area.removeFromRight(area.getWidth()/2);
+        area.removeFromBottom(area.getHeight()/3*2);
+        volumeMain.setBounds(area);
+        area.setPosition(area.getX(), area.getHeight() * 2);
+        volumePhone.setBounds(area);
+        area.setPosition(area.getX(), area.getY() - area.getHeight());
+        testToneToggle.setBounds(area);
+        area.setPosition(area.getX() + area.getWidth(), area.getY() - area.getHeight());
+        mainOutputToggle.setBounds(area);
         // This method is where you should set the bounds of any child
         // components that your component contains..
 
@@ -61,7 +78,10 @@ public:
 
 private:
     Rectangle<int> area;
-    FlipSwitch flip1;
+    Slider volumeMain;
+    Slider volumePhone;
+    BlueFlipSwitch mainOutputToggle;
+    BlueFlipSwitch testToneToggle;
     
     float lineThickness = 3.0f;
     

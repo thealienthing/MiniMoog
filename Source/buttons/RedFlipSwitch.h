@@ -16,15 +16,15 @@
 //==============================================================================
 /*
 */
-class FlipSwitch    :   public ImageButton
+class RedFlipSwitch    :   public ImageButton
 {
 public:
     
-    FlipSwitch ()
+    RedFlipSwitch ()
     {
         setSize(70, 27);
-        onButton = ImageCache::getFromMemory (BinaryData::on_png, BinaryData::on_pngSize);
-        offButton= ImageCache::getFromMemory (BinaryData::off_png,BinaryData::off_pngSize);
+        onButton = ImageCache::getFromMemory (BinaryData::redOn_png, BinaryData::redOn_pngSize);
+        offButton= ImageCache::getFromMemory (BinaryData::redOff_png,BinaryData::redOff_pngSize);
         myImageButton.setImages(false, false, false, offButton, 1.0f, {}, Image(), 1.0f, {}, onButton, 1.0f, {});
         myImageButton.setClickingTogglesState(true);
         addAndMakeVisible(myImageButton);
@@ -32,7 +32,7 @@ public:
         
     }
     
-    ~FlipSwitch()
+    ~RedFlipSwitch()
     {
     }
     
@@ -54,7 +54,7 @@ private:
     Image offButton;
     
     
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FlipSwitch)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (RedFlipSwitch)
 };
 
 

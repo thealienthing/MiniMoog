@@ -11,7 +11,7 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "../buttons/FlipSwitch.h"
+#include "../buttons/BlueFlipSwitch.h"
 #include <stdio.h>
 
 //==============================================================================
@@ -125,11 +125,11 @@ private:
     Slider extInputVolume;
     Slider noiseVolume;
     
-    FlipSwitch volumeToggle1;
-    FlipSwitch volumeToggle2;
-    FlipSwitch volumeToggle3;
-    FlipSwitch extInputVolumeToggle;
-    FlipSwitch noiseVolumeToggle;
+    BlueFlipSwitch volumeToggle1;
+    BlueFlipSwitch volumeToggle2;
+    BlueFlipSwitch volumeToggle3;
+    BlueFlipSwitch extInputVolumeToggle;
+    BlueFlipSwitch noiseVolumeToggle;
     
     
     

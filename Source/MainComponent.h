@@ -15,7 +15,7 @@
 #include "panels/ModifiersPanel.h"
 #include "panels/OutputPanel.h"
 #include "panels/PowerPanel.h"
-#include "buttons/FlipSwitch.h"
+#include "buttons/RedFlipSwitch.h"
 
 //==============================================================================
 /*
@@ -47,9 +47,9 @@ private:
     OutputPanel     output;
     PowerPanel      power;
     
-    FlipSwitch  OscillatorModulationToggle;
-    FlipSwitch  FilterModulationToggle1;
-    FlipSwitch  KeyboardControlToggle1;
-    FlipSwitch  KeyboardControlToggle2;
+    RedFlipSwitch  OscillatorModulationToggle;
+    RedFlipSwitch  FilterModulationToggle1;
+    RedFlipSwitch  KeyboardControlToggle1;
+    RedFlipSwitch  KeyboardControlToggle2;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

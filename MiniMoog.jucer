@@ -19,11 +19,15 @@
             file="Source/MainComponent.cpp"/>
       <FILE id="nSugc0" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <GROUP id="{84A4ECFC-11BE-513C-828F-20E62CE71B62}" name="images">
-        <FILE id="wcAO2R" name="on.png" compile="0" resource="1" file="Source/images/on.png"/>
-        <FILE id="F0pmgl" name="off.png" compile="0" resource="1" file="Source/images/off.png"/>
+        <FILE id="gLRc0H" name="blueOff.png" compile="0" resource="1" file="Source/images/blueOff.png"/>
+        <FILE id="kdPa7X" name="blueOn.png" compile="0" resource="1" file="Source/images/blueOn.png"/>
+        <FILE id="UkLDdJ" name="redOff.png" compile="0" resource="1" file="Source/images/redOff.png"/>
+        <FILE id="k0raXQ" name="redOn.png" compile="0" resource="1" file="Source/images/redOn.png"/>
       </GROUP>
       <GROUP id="{377E0883-25E7-9950-7786-8AB4D2539F42}" name="buttons">
-        <FILE id="WFmCNc" name="FlipSwitch.h" compile="0" resource="0" file="Source/buttons/FlipSwitch.h"/>
+        <FILE id="Yk5rsz" name="BlueFlipSwitch.h" compile="0" resource="0"
+              file="Source/BlueFlipSwitch.h"/>
+        <FILE id="WFmCNc" name="RedFlipSwitch.h" compile="0" resource="0" file="Source/buttons/RedFlipSwitch.h"/>
       </GROUP>
     </GROUP>
   </MAINGROUP>
