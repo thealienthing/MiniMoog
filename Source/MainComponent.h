@@ -46,7 +46,10 @@ private:
     ModifiersPanel modifiers;
     OutputPanel     output;
     PowerPanel      power;
-    FlipSwitch  flip1;
-    ImageButton myImageButton;
+    
+    FlipSwitch  OscillatorModulationToggle;
+    FlipSwitch  FilterModulationToggle1;
+    FlipSwitch  KeyboardControlToggle1;
+    FlipSwitch  KeyboardControlToggle2;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

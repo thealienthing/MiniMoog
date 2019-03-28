@@ -11,6 +11,7 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "../buttons/FlipSwitch.h"
 #include <stdio.h>
 
 //==============================================================================
@@ -28,6 +29,11 @@ public:
         addAndMakeVisible(volume3);
         addAndMakeVisible(extInputVolume);
         addAndMakeVisible(noiseVolume);
+        addAndMakeVisible(volumeToggle1);
+        addAndMakeVisible(volumeToggle2);
+        addAndMakeVisible(volumeToggle3);
+        addAndMakeVisible(extInputVolumeToggle);
+        addAndMakeVisible(noiseVolumeToggle);
         
         volume1.setTextBoxStyle(Slider::TextEntryBoxPosition::NoTextBox, false, 0, 0);
         volume2.setTextBoxStyle(Slider::TextEntryBoxPosition::NoTextBox, false, 0, 0);
@@ -72,7 +78,8 @@ public:
         area.removeFromRight(width/2);
         area.removeFromLeft(width/4);
         area.removeFromBottom(height*.835);
-        g.setColour(Colours::pink);
+        area.setPosition(area.getX(), area.getHeight());
+        
         
         
         
@@ -97,9 +104,16 @@ public:
         area.removeFromRight(width/2);
         area.removeFromLeft(width/4);
         area.removeFromBottom(height*.835);
-        //volume1Toggle.setBounds(area);
-        
-        
+        area.setPosition(area.getX(), area.getHeight()/2);
+        volumeToggle1.setBounds(area);
+        area.setPosition(area.getX(), area.getY() + area.getHeight());
+        extInputVolumeToggle.setBounds(area);
+        area.setPosition(area.getX(), area.getY() + area.getHeight());
+        volumeToggle2.setBounds(area);
+        area.setPosition(area.getX(), area.getY() + area.getHeight());
+        noiseVolumeToggle.setBounds(area);
+        area.setPosition(area.getX(), area.getY() + area.getHeight());
+        volumeToggle3.setBounds(area);
     }
 
 private:
@@ -111,11 +125,14 @@ private:
     Slider extInputVolume;
     Slider noiseVolume;
     
+    FlipSwitch volumeToggle1;
+    FlipSwitch volumeToggle2;
+    FlipSwitch volumeToggle3;
+    FlipSwitch extInputVolumeToggle;
+    FlipSwitch noiseVolumeToggle;
     
-    ToggleButton volume2Toggle;
-    ToggleButton volume3Toggle;
-    ToggleButton extInputVolumeToggle;
-    ToggleButton noiseVolumeToggle;
+    
+    
     
     float lineThickness = 3.0f;
     

@@ -71,6 +71,11 @@ public:
         g.drawLine(0, height, 0, 0, lineThickness);
         
     }
+    
+    Slider* getTune()
+    {
+        return &tune;
+    }
 
     void resized() override
     {
