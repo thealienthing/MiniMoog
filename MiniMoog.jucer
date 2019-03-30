@@ -3,6 +3,8 @@
 <JUCERPROJECT id="LuLPgs" name="MiniMoog" projectType="guiapp" jucerVersion="5.4.3">
   <MAINGROUP id="Ssg8HQ" name="MiniMoog">
     <GROUP id="{1F2605EF-C0F2-00C0-6D37-E62C5FD44162}" name="Source">
+      <FILE id="jlaxBa" name="CustomLookAndFeel.h" compile="0" resource="0"
+            file="Source/CustomLookAndFeel.h"/>
       <GROUP id="{FE606E0D-1FA0-133D-71AF-3959AB729113}" name="panels">
         <FILE id="l2ddzt" name="ControllersPanel.h" compile="0" resource="0"
               file="Source/panels/ControllersPanel.h"/>
@@ -25,9 +27,7 @@
         <FILE id="k0raXQ" name="redOn.png" compile="0" resource="1" file="Source/images/redOn.png"/>
       </GROUP>
       <GROUP id="{377E0883-25E7-9950-7786-8AB4D2539F42}" name="buttons">
-        <FILE id="Yk5rsz" name="BlueFlipSwitch.h" compile="0" resource="0"
-              file="Source/BlueFlipSwitch.h"/>
-        <FILE id="WFmCNc" name="RedFlipSwitch.h" compile="0" resource="0" file="Source/buttons/RedFlipSwitch.h"/>
+        <FILE id="azTYPf" name="FlipSwitch.h" compile="0" resource="0" file="Source/buttons/FlipSwitch.h"/>
       </GROUP>
     </GROUP>
   </MAINGROUP>

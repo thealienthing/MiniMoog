@@ -15,7 +15,8 @@
 #include "panels/ModifiersPanel.h"
 #include "panels/OutputPanel.h"
 #include "panels/PowerPanel.h"
-#include "buttons/RedFlipSwitch.h"
+#include "buttons/FlipSwitch.h"
+
 
 //==============================================================================
 /*
@@ -37,7 +38,8 @@ public:
 
 private:
     //==============================================================================
-    // Your private member variables go here...
+    
+    
     int sliderRad = 55;
     Slider volumeKnob;
     ControllersPanel controller;
@@ -47,9 +49,9 @@ private:
     OutputPanel     output;
     PowerPanel      power;
     
-    RedFlipSwitch  OscillatorModulationToggle;
-    RedFlipSwitch  FilterModulationToggle1;
-    RedFlipSwitch  KeyboardControlToggle1;
-    RedFlipSwitch  KeyboardControlToggle2;
+    FlipSwitch  OscillatorModulationToggle;
+    FlipSwitch  FilterModulationToggle1;
+    FlipSwitch  KeyboardControlToggle1;
+    FlipSwitch  KeyboardControlToggle2;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };
