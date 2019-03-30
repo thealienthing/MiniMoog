@@ -11,6 +11,7 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "../CustomLookAndFeel.h"
 
 //==============================================================================
 /*
@@ -21,6 +22,7 @@ public:
     ControllersPanel()
     {
         setSize(width, height);
+        setLookAndFeel(&customLook);
         
         tune.setSliderStyle(Slider::SliderStyle::Rotary);
         tune.setTextBoxStyle(Slider::TextEntryBoxPosition::NoTextBox, false, 0, 0);
@@ -33,6 +35,7 @@ public:
         knobFont.setHeight(12.0f);
         panelFont.setTypefaceName("Futura");
         panelFont.setHeight(28.0f);
+        panelFont.setExtraKerningFactor(0.075);
         
         addAndMakeVisible(tune);
         addAndMakeVisible(glide);
@@ -59,6 +62,8 @@ public:
         
         g.setFont(panelFont);
         g.setColour(Colours::white);
+        area.removeFromTop(height/4 * 3);
+        area.removeFromBottom(30);
         g.drawText("CONTROLLERS", area, Justification::centredBottom, true);
         g.setFont(knobFont);
         g.drawText("TUNE", width/2 - 20, tune.getY()+50, 40, 10, Justification::centred);
@@ -96,6 +101,7 @@ public:
 
 private:
     Rectangle<int> area;
+    CustomLookAndFeel customLook;
     
     float lineThickness = 3.0;
     

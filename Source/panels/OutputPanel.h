@@ -11,7 +11,8 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "../buttons/BlueFlipSwitch.h"
+#include "../buttons/FlipSwitch.h"
+#include "../CustomLookAndFeel.h"
 
 //==============================================================================
 /*
@@ -22,10 +23,15 @@ public:
     OutputPanel()
     {
         setSize(width, height);
+        setLookAndFeel(&customLook);
+        
         addAndMakeVisible(testToneToggle);
         addAndMakeVisible(mainOutputToggle);
         addAndMakeVisible(volumeMain);
         addAndMakeVisible(volumePhone);
+        
+        testToneToggle.setSwitchColour("blue");
+        mainOutputToggle.setSwitchColour("blue");
         
         volumeMain.setSliderStyle(juce::Slider::Rotary);
         volumePhone.setSliderStyle(juce::Slider::Rotary);
@@ -37,6 +43,7 @@ public:
         knobFont.setHeight(12.0f);
         panelFont.setTypefaceName("Futura");
         panelFont.setHeight(28.0f);
+        panelFont.setExtraKerningFactor(0.075);
 
     }
 
@@ -78,10 +85,12 @@ public:
 
 private:
     Rectangle<int> area;
+    CustomLookAndFeel customLook;
+    
     Slider volumeMain;
     Slider volumePhone;
-    BlueFlipSwitch mainOutputToggle;
-    BlueFlipSwitch testToneToggle;
+    FlipSwitch mainOutputToggle;
+    FlipSwitch testToneToggle;
     
     float lineThickness = 3.0f;
     

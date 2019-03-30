@@ -26,6 +26,7 @@ public:
         knobFont.setHeight(12.0f);
         panelFont.setTypefaceName("Futura");
         panelFont.setHeight(28.0f);
+        panelFont.setExtraKerningFactor(0.075);
 
     }
 

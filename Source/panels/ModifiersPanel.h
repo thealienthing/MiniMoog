@@ -11,6 +11,7 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "../CustomLookAndFeel.h"
 
 
 //==============================================================================
@@ -21,7 +22,10 @@ class ModifiersPanel    : public Component
 public:
     ModifiersPanel()
     {
+
         setSize(width, height);
+        setLookAndFeel(&customLook);
+        
         addAndMakeVisible(loudnessAttack);
         addAndMakeVisible(loudnessDecay);
         addAndMakeVisible(loudnessSustain);
@@ -56,6 +60,7 @@ public:
         knobFont.setHeight(12.0f);
         panelFont.setTypefaceName("Futura");
         panelFont.setHeight(28.0f);
+        panelFont.setExtraKerningFactor(0.075);
 
     }
 
@@ -112,6 +117,7 @@ public:
 
 private:
     Rectangle<int> area;
+    CustomLookAndFeel customLook;
     
     Slider loudnessAttack;
     Slider loudnessDecay;

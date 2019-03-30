@@ -12,6 +12,8 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "../buttons/BlueFlipSwitch.h"
+#include "../buttons/FlipSwitch.h"
+#include "../CustomLookAndFeel.h"
 #include <stdio.h>
 
 //==============================================================================
@@ -34,6 +36,7 @@ public:
         addAndMakeVisible(volumeToggle3);
         addAndMakeVisible(extInputVolumeToggle);
         addAndMakeVisible(noiseVolumeToggle);
+        setLookAndFeel(&customLook);
         
         volume1.setTextBoxStyle(Slider::TextEntryBoxPosition::NoTextBox, false, 0, 0);
         volume2.setTextBoxStyle(Slider::TextEntryBoxPosition::NoTextBox, false, 0, 0);
@@ -47,12 +50,22 @@ public:
         extInputVolume.setSliderStyle(Slider::SliderStyle::Rotary);
         noiseVolume.setSliderStyle(Slider::SliderStyle::Rotary);
         
-        
+        volumeToggle1.setSwitchColour("blue");
+        volumeToggle2.setSwitchColour("blue");
+        volumeToggle3.setSwitchColour("blue");
+        extInputVolumeToggle.setSwitchColour("blue");
+        noiseVolumeToggle.setSwitchColour("blue");
+        volumeToggle1.setPointerLine(-1);
+        volumeToggle2.setPointerLine(-1);
+        volumeToggle3.setPointerLine(-1);
+        extInputVolumeToggle.setPointerLine(1);
+        noiseVolumeToggle.setPointerLine(1);
         
         knobFont.setTypefaceName("Futura");
         knobFont.setHeight(12.0f);
         panelFont.setTypefaceName("Futura");
         panelFont.setHeight(28.0f);
+        panelFont.setExtraKerningFactor(0.075);
         
     }
 
@@ -67,6 +80,8 @@ public:
         g.fillRect(area);
         g.setColour(Colours::white);
         g.setFont(panelFont);
+        area.removeFromTop(height/4 * 3);
+        area.removeFromBottom(30);
         g.drawText("MIXER", area, Justification::centredBottom, true);
         
         g.drawLine(0, 0, width, 0, lineThickness);
@@ -89,22 +104,23 @@ public:
     {
         area = Rectangle<int>(0, 0, width, height);
         area.removeFromRight(width*.75);
-        area.removeFromBottom(height*.66);
+        area.removeFromBottom(height*.75);
+        area.setPosition(area.getX()+4, area.getY()+18);
         volume1.setBounds(area);
-        area.setPosition(area.getX(), area.getY()+(height*.33));
+        area.setPosition(area.getX(), area.getY()+(height*.28));
         volume2.setBounds(area);
-        area.setPosition(area.getX(), area.getY()+(height*.33));
+        area.setPosition(area.getX(), area.getY()+(height*.28));
         volume3.setBounds(area);
-        area.setPosition(area.getWidth()*2, area.getY() - (height*.165));
+        area.setPosition(area.getWidth()*2 +10, area.getY() - (height*.14));
         extInputVolume.setBounds(area);
-        area.setPosition(area.getWidth()*2, area.getY() - (height*.33));
+        area.setPosition(area.getWidth()*2 +10, area.getY() - (height*.28));
         noiseVolume.setBounds(area);
         
         area = Rectangle<int>(0, 0, width, height);
         area.removeFromRight(width/2);
         area.removeFromLeft(width/4);
-        area.removeFromBottom(height*.835);
-        area.setPosition(area.getX(), area.getHeight()/2);
+        area.removeFromBottom(height*.86);
+        area.setPosition(area.getX()+5, area.getHeight()/3 + 25);
         volumeToggle1.setBounds(area);
         area.setPosition(area.getX(), area.getY() + area.getHeight());
         extInputVolumeToggle.setBounds(area);
@@ -119,17 +135,20 @@ public:
 private:
     Rectangle<int> area;
     
+    CustomLookAndFeel customLook;
+    
+    
     Slider volume1;
     Slider volume2;
     Slider volume3;
     Slider extInputVolume;
     Slider noiseVolume;
     
-    BlueFlipSwitch volumeToggle1;
-    BlueFlipSwitch volumeToggle2;
-    BlueFlipSwitch volumeToggle3;
-    BlueFlipSwitch extInputVolumeToggle;
-    BlueFlipSwitch noiseVolumeToggle;
+    FlipSwitch volumeToggle1;
+    FlipSwitch volumeToggle2;
+    FlipSwitch volumeToggle3;
+    FlipSwitch extInputVolumeToggle;
+    FlipSwitch noiseVolumeToggle;
     
     
     

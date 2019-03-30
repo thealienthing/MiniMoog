@@ -11,6 +11,7 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "../CustomLookAndFeel.h"
 
 //==============================================================================
 /*
@@ -21,6 +22,7 @@ public:
     OscillatorBankPanel()
     {
         setSize(width, height);
+        setLookAndFeel(&customLook);
         
         addAndMakeVisible(range1);
         addAndMakeVisible(range2);
@@ -54,6 +56,7 @@ public:
         knobFont.setHeight(12.0f);
         panelFont.setTypefaceName("Futura");
         panelFont.setHeight(28.0f);
+        panelFont.setExtraKerningFactor(0.1);
         
     }
 
@@ -78,6 +81,8 @@ public:
         g.fillRect(area);
         g.setColour(Colours::white);
         g.setFont(panelFont);
+        area.removeFromTop(height/4 * 3);
+        area.removeFromBottom(30);
         g.drawText("OSCILLATOR BANK", area, Justification::centredBottom, true);
         
         g.setFont(knobFont);
@@ -91,11 +96,12 @@ public:
         area = Rectangle<int>(0, 0, width, height);
         area.removeFromLeft(width/3);
         area.removeFromRight(width/3);
-        area.removeFromBottom(height/3*2);
+        area.removeFromBottom(height*.75);
+        area.setPosition(area.getX(), area.getY()+10);
         g.drawText("OSCILLATOR-1", area, Justification::centredTop, true);
-        area.setPosition(area.getX(), area.getY()+height/3);
+        area.setPosition(area.getX(), area.getY()+(height*.28));
         g.drawText("OSCILLATOR-2", area, Justification::centredTop, true);
-        area.setPosition(area.getX(), area.getY()+height/3);
+        area.setPosition(area.getX(), area.getY()+(height*.28));
         g.drawText("OSCILLATOR-3", area, Justification::centredTop, true);
         
         g.drawLine(0, 0, width, 0, lineThickness);
@@ -107,31 +113,35 @@ public:
 
     void resized() override
     {
-        area = Rectangle<int>(0, 0, width, height).removeFromTop(height/3+20);
-        range1.setBounds(area.removeFromLeft(width/3));
-        waveform1.setBounds(area.removeFromRight(width/3));
-        
         area = Rectangle<int>(0, 0, width, height);
-        area.removeFromTop(height/3+5);
-        area.removeFromBottom(height/3+5);
-        range2.setBounds(area.removeFromLeft(width/3));
-        waveform2.setBounds(area.removeFromRight(width/3));
+        area.removeFromRight(width*.75);
+        area.removeFromLeft(15);
+        area.removeFromBottom(height*.75);
+        area.setPosition(area.getX()+22, area.getY()+18);
+        range1.setBounds(area);
+        area.setPosition(area.getX(), area.getY()+(height*.28));
+        range2.setBounds(area);
+        area.setPosition(area.getX(), area.getY()+(height*.28));
+        range3.setBounds(area);
+        
+        area.setPosition(width*.3 * 2 +30, area.getY()-(height*.56));
+        waveform1.setBounds(area);
+        area.setPosition(area.getX(), area.getY() + (height*.28));
+        waveform2.setBounds(area);
+        area.setPosition(area.getX(), area.getY() + (height*.28));
+        waveform3.setBounds(area);
+        
+        area.setPosition(width*.3 + 30, area.getY() - (height*.28));
         oscillator2.setBounds(area);
-        
-        area = Rectangle<int>(0, 0, width, height).removeFromBottom(height/3+25);
-        area.removeFromTop(15);
-        range3.setBounds(area.removeFromLeft(width/3));
-        waveform3.setBounds(area.removeFromRight(width/3));
+        area.setPosition(area.getX(), area.getY() + (height*.28));
         oscillator3.setBounds(area);
-        
-        
-        
-        
-        
+
     }
 
 private:
     Rectangle<int> area;
+    CustomLookAndFeel customLook;
+    
     Slider range1;
     Slider range2;
     Slider range3;
