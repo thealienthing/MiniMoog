@@ -11,9 +11,8 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "../buttons/BlueFlipSwitch.h"
 #include "../buttons/FlipSwitch.h"
-#include "../CustomLookAndFeel.h"
+#include "../MoogDefaultKnob.h"
 #include <stdio.h>
 
 //==============================================================================
@@ -55,11 +54,7 @@ public:
         volumeToggle3.setSwitchColour("blue");
         extInputVolumeToggle.setSwitchColour("blue");
         noiseVolumeToggle.setSwitchColour("blue");
-        volumeToggle1.setPointerLine(-1);
-        volumeToggle2.setPointerLine(-1);
-        volumeToggle3.setPointerLine(-1);
-        extInputVolumeToggle.setPointerLine(1);
-        noiseVolumeToggle.setPointerLine(1);
+        
         
         knobFont.setTypefaceName("Futura");
         knobFont.setHeight(12.0f);
@@ -88,6 +83,14 @@ public:
         g.drawLine(width, 0, width, height, lineThickness);
         g.drawLine(width, height, 0, height, lineThickness);
         g.drawLine(0, height, 0, 0, lineThickness);
+        
+        g.drawLine(volumeToggle1.getX() + 20, volumeToggle1.getY()+volumeToggle1.getHeight()/2, volumeToggle1.getX() - 10, volumeToggle1.getY()+volumeToggle1.getHeight()/2, lineThickness);
+        g.drawLine(volumeToggle2.getX() + 20, volumeToggle2.getY()+volumeToggle2.getHeight()/2, volumeToggle2.getX() - 10, volumeToggle2.getY()+volumeToggle2.getHeight()/2, lineThickness);
+        g.drawLine(volumeToggle3.getX() + 20, volumeToggle3.getY()+volumeToggle3.getHeight()/2, volumeToggle3.getX() - 10, volumeToggle3.getY()+volumeToggle3.getHeight()/2, lineThickness);
+        
+        g.drawLine(extInputVolumeToggle.getRight() - 22, extInputVolumeToggle.getY()+extInputVolumeToggle.getHeight()/2, extInputVolumeToggle.getRight() + 12, extInputVolumeToggle.getY()+extInputVolumeToggle.getHeight()/2, lineThickness);
+        
+        g.drawLine(noiseVolumeToggle.getRight() - 22, noiseVolumeToggle.getY()+noiseVolumeToggle.getHeight()/2, noiseVolumeToggle.getRight() + 12, noiseVolumeToggle.getY()+noiseVolumeToggle.getHeight()/2, lineThickness);
         
         area = Rectangle<int>(0, 0, width, height);
         area.removeFromRight(width/2);
@@ -135,7 +138,7 @@ public:
 private:
     Rectangle<int> area;
     
-    CustomLookAndFeel customLook;
+    MoogDefaultKnob customLook;
     
     
     Slider volume1;

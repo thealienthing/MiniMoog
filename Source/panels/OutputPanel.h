@@ -12,12 +12,13 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "../buttons/FlipSwitch.h"
-#include "../CustomLookAndFeel.h"
+#include "../MoogDefaultKnob.h"
 
 //==============================================================================
 /*
 */
 class OutputPanel    : public Component
+                        
 {
 public:
     OutputPanel()
@@ -85,7 +86,7 @@ public:
 
 private:
     Rectangle<int> area;
-    CustomLookAndFeel customLook;
+    MoogDefaultKnob customLook;
     
     Slider volumeMain;
     Slider volumePhone;

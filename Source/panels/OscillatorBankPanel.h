@@ -11,7 +11,7 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "../CustomLookAndFeel.h"
+#include "../MoogPointerKnob.h"
 
 //==============================================================================
 /*
@@ -140,7 +140,7 @@ public:
 
 private:
     Rectangle<int> area;
-    CustomLookAndFeel customLook;
+    MoogDefaultKnob customLook;
     
     Slider range1;
     Slider range2;

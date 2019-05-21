@@ -11,7 +11,7 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "../CustomLookAndFeel.h"
+#include "../MoogDefaultKnob.h"
 
 //==============================================================================
 /*
@@ -101,7 +101,7 @@ public:
 
 private:
     Rectangle<int> area;
-    CustomLookAndFeel customLook;
+    MoogDefaultKnob customLook;
     
     float lineThickness = 3.0;
     
